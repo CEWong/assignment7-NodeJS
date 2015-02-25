@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="tutorialsGallery">
+    
+<head>
+	<title>All About Node.JS</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+	<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+</head>
+    
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1> - My Blog! - Node.js</h1>
+        </header>
+        <div class="panel">
+        <h2 class="panel-heading">Straight From The Source</h2>
+                <p class="panel-body"><strong>According to NodeJS' <a href="nodejs.org">website</a>: </strong>Node.js is a platform built on Chrome's JavaScript runtime for easliy building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices. <br>
+<strong>This website better details what Node.js is in their <a href="nodejs.org/about"> About Node.js</a> link:</strong> As an asynchronous event driven framework, Node.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection the callback is fired, but if there is no work to be done Node is sleeping.<br>
+This is in contrast to today's more common concurrency model where OS threads are employed. Thread-based networking is relatively inefficient and very difficult to use. Furthermore, users of Node are free from worries of dead-locking the process—there are no locks. Almost no function in Node directly performs I/O, so the process never blocks. Because nothing blocks, less-than-expert programmers are able to develop scalable systems.<br>
+
+Node is similar in design to and influenced by systems like Ruby's Event Machine or Python's Twisted. Node takes the event model a bit further, it presents the event loop as a language construct instead of as a library. In other systems there is always a blocking call to start the event-loop. Typically one defines behavior through callbacks at the beginning of a script and at the end starts a server through a blocking call like EventMachine::run(). In Node there is no such start-the-event-loop call. Node simply enters the event loop after executing the input script. Node exits the event loop when there are no more callbacks to perform. This behavior is like browser JavaScript -— the event loop is hidden from the user.<br>
+
+HTTP is a first class citizen in Node, designed with streaming and low latency in mind. This makes Node well suited for the foundation of web library or framework.<br>
+
+Just because Node is designed without threads, doesn't mean you cannot take advantage of multiple cores in your environment. You can spawn child processes that are easy to communicate with by using our child_process.fork() API. Built upon that same interface is the cluster module, which allows you to share sockets between processes to enable load balancing over your cores.<br>                    
+                </p>
+        </div>
+        <div class="panel row">
+            <div class="col-md-1">
+                <p> <br><br><br><br><br><br><br><br><br><br><br><br><a href="https://www.youtube.com/watch?v=jo_B4LTHi3I"> Intorduction to Node.js Video </a>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                    <a href="https://www.airpair.com/javascript/node-js-tutorial"> Starting with Node.js Tutorial </a>
+                </p>
+            </div>
+            <div class="col-md-7">
+                <h3 class="panel-heading">Node.js Reviewed</h3>
+                <p> In the latest assignment for class, we were asked to watch a YouTube video introducing Node.js.<br>
+                    <img src="VideoTitleScreen.PNG" class="img-responsive"><br>
+                    From this video, some of the important things mentioned were:
+                    <ul>
+                        <li>Node is a set of libraries on top of the virtual machine</li>
+                        <li><em>“Sugar on top of high performance virtual machine”</em></li>
+                        <li>Have to download then compile it (takes about 2 minutes)</li>
+                        <li>It’s a command line thing, similar to Python</li>
+                        <li>Global variable in Node is not associate in a browser, you have a process object as opposed to JavaScript that has a window variable within the browser</li>
+                        <li>Comes bundled with a lot of cool libraries</li>
+                        <li>Has a pretty advanced HTTP library built in that can do both client and server side HTTP
+</li>
+                        <li>In PHP you would do ‘echo, sleep, echo’ where as in Node you use ‘SetTimeout’</li>
+                        <li>In node, you never stop (i.e sleep, fetch a url from website and wait for it to come back, etc), you can only set timeouts making it idle</li>
+                        <li>Node exits when it has nothing left to do</li>
+                        <li>Node handles concurrency well - it never waits for anything so it’s allowed to handle more and more connections. It’s never halted on sleeping, connection to some database, etc</li>
+                        <li>Performs much better than traditional web server when under high concurrency</li>
+                        <li>Debugging is “half done” - much better now then when the video came out</li>
+                        <li>Node in a One-to-One correspondence with Ruby, there is a gems sort of thing known as NPM</li>
+                        <li>Having NPM helps a lot when working with Node</li>
+                        <li>Keep in mind ExpressJS</li>
+                    </ul>
+                    <br><br>
+                </p>
+                <p>
+                    In this assignment, we were also asked to read a Node tutorial. From this step-by-step guide to getting started with Node, I've compiled a few key notes. <br>
+                    <ul>
+                        <li>It’s an asynchronous, event-driven framework built on top of Chrome’s JavaScript engine and designed for creating scalable network applications (basically JavaScript plus a bunch of C/C++)</li>
+                        <li>Single-threaded and uses a concurrency model based on an event loop. (It can handle concurrent operations without multiple threads of execution, so it can scale pretty well)</li>
+                        <li>Node packages are growing faster than Ruby, Python, and Java Combined</li>
+                        <li>In Node, you register some callbacks instead of how you would go about getting HTML content with a sequential language
+</li>
+                        <li><em>Big Differernce from Traditional Server Side Languages 1:</em> Node allows you to perform other tasks while waiting to be notified when the response is available
+</li>
+                        <li><em>Big Differernce from Traditional Server Side Languages 2:</em> The node application is not buffering data into memory, but instead it’s outputting it chunk-by-chunk</li>
+                        <li>All libraries have been designed from the ground up to be non-blocking</li>
+                        <li>Java or Python use the import function to load other libraries, while PHP and Ruby use require. Node implements the COmmonJS interface for modules. In Node you can also load other dependencies using the require keyword</li>
+                        <li>In asynchronous programming, values are not returned when function are done, instead continuation-passing style (CPS) is used</li>
+                        <li>Node owes a big part of it’s success to npm, the package manager that comes bundled with it</li>
+                        <li>You can use NVM (Node version manager) to test your code with different versions of Node</li>
+                        <li>Node modules don’t share scope, to share a variable you must include it into a separate module that is then required by the other modules</li>
+                        <li>If you ignore errors (i.e. Callback, EventEmitter, etc) or deal with them improperly in Node, your entire application might crash or be left in an inconsistent state</li>
+                        <li>To debug Node applications you can use node-inspector which is installable via npm</li>
+                        <li>Express is the most popular web framework for Node, while Socket.IO is a realtime framework that enables bi-directional communication between web clients and the server</li>
+                        <li>Node is a great option for applications that wait on I/O and have to handle a lot of concurrent connections</li>
+                        <li>npm registry is growing on a daily basis</li>
+                        <li>Popular companies such as Yahoo, Walmart, and PayPal are using Node in production</li>
+                    </ul>
+                </p>
+                <h4>Basic Example: </h43>
+                    <img src="BasicExample1.PNG" class="img-responsive">
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="panel-heading">Getting Started</h3>
+                <p>You will need to download <a href="http://nodejs.org/download/">Node.js</a> on to your computer. You wil also need a text editor. <br>
+                </p>
+                <h3>Key Concept</h3>
+                    <strong>Non-Blocking I/O</strong>- <em>also known as Asynchronous I/O:</em><br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; According to <a href="en.wikipedia.org/wiki/Asynchronous_I/O"> Wikipedia: </a><u>In computer science, <strong>asynchronous I/O, or non-blocking I/O</strong> is a form of input/output processing that permits other processing to continue before the transmission has finished.</u><br>
+Input and output (I/O) operations on a computer can be extremely slow compared to the processing of data. An I/O device can incorporate mechanical devices that must physically move, such as a hard drive seeking a track to read or write; this is often orders of magnitude slower than the switching of electric current. For example, during a disk operation that takes ten milliseconds to perform, a processor that is clocked at one gigahertz could have performed ten million instruction-processing cycles.<br>
+A simple approach to I/O would be to start the access and then wait for it to complete. But such an approach (called <strong>synchronous I/O or blocking I/O</strong>) would block the progress of a program while the communication is in progress, leaving system resources idle. When a program makes many I/O operations, this means that the processor can spend almost all of its time idle waiting for I/O operations to complete.<br>
+Alternatively, it is possible to start the communication and then perform processing that does not require that the I/O has completed. This approach is called asynchronous input/output. Any task that depends on the I/O having completed (this includes both using the input values and critical operations that claim to assure that a write operation has been completed) still needs to wait for the I/O operation to complete, and thus is still blocked, but other processing that does not have a dependency on the I/O operation can continue.<br>
+Many operating system functions exist to implement asynchronous I/O at many levels. In fact, one of the main functions of all but the most rudimentary of operating systems is to perform at least some form of basic asynchronous I/O, though this may not be particularly apparent to the operator or programmer. In the simplest software solution, the hardware device status is polled at intervals to detect whether the device is ready for its next operation. (For example the CP/M operating system was built this way. Its system call semantics did not require any more elaborate I/O structure than this, though most implementations were more complex, and thereby more efficient.) Direct memory access (DMA) can greatly increase the efficiency of a polling-based system, and hardware interrupts can eliminate the need for polling entirely. Multitasking operating systems can exploit the functionality provided by hardware interrupts, whilst hiding the complexity of interrupt handling from the user. Spooling was one of the first forms of multitasking designed to exploit asynchronous I/O. Finally, multithreading and explicit asynchronous I/O APIs within user processes can exploit asynchronous I/O further, at the cost of extra software complexity.<br>
+Asynchronous I/O is used to improve throughput, latency, and/or responsiveness.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
